@@ -1,8 +1,41 @@
 body {
-  margin: 8px;
+  margin: 0px auto;
 }
 
 ul {
   list-style-type: none;
   padding: 8px;
 }
+
+.area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+ul {
+  width: 300px;
+  border: 2px solid black;
+}
+
+li {
+  
+height: 45px;
+}
+
+button {
+  width: 70px;
+height: 30px;
+}
+
+li p{
+  float: left;
+  margin-top: 6px;
+}
+
+li button{
+  float: right;
+}
+

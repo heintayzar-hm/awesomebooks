@@ -28,14 +28,12 @@ class Books {
       const booksShow = document.querySelector('.books-show');
       const book = document.createElement('li');
       const p = document.createElement('p');
-      p.innerHTML = `${this.books[i].title} <br> ${this.books[i].author}`;
+      p.innerHTML = `${this.books[i].title} by ${this.books[i].author}`;
       book.append(p);
       const remove = document.createElement('button');
       remove.setAttribute('onclick', `books.remove('${this.books[i].title}')`);
       remove.innerText = 'remove';
       book.append(remove);
-      const hr = document.createElement('hr');
-      book.append(hr);
       booksShow.appendChild(book);
     }
   }
