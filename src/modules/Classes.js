@@ -11,14 +11,19 @@ export default class Books {
     this.books = JSON.parse(localStorage.getItem('books'));
   }
 
-  // method to add book by geting data from dom
+  // method to add book by geting data from parameters
   addBook({ e, title, author }) {
     this.books.push({ title, author });
-    const book = this.bookToDom(title, author);
+    // addd to class
+    this.bookToDom(title, author);
     localStorage.setItem('books', JSON.stringify(this.books));
     const form = document.querySelector('form');
     form.reset();
+
+    // update data from local
     this.update();
+
+    // redirect to list section
     window.location.assign('#list');
     e.preventDefault();
   }
@@ -35,12 +40,12 @@ export default class Books {
   // method to create books and append to dom
 
   createBookFromLocal() {
+    // no books no show
     if (this.books.length === 0) {
       window.location.assign('#add');
     }
+    // show the books
     for (let i = 0; i < this.books.length; i += 1) {
-      // console.log(this.books);
-
       const booksShow = document.querySelector('.books-show');
       booksShow.style.display = 'block';
       const book = this.bookToDom(this.books[i].title, this.books[i].author);
@@ -48,6 +53,7 @@ export default class Books {
     }
   }
 
+  // create list elemnt for books
   bookToDom(title, author) {
     const book = document.createElement('li');
     book.setAttribute('title', title);

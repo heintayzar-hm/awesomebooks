@@ -6,6 +6,7 @@ export default class extends Main {
     this.setTitle('Show Books');
   }
 
+  // html data
   getDoc = async () => ` <section class="show-book-list">
   <h1>All Awesome Books</h1>
   <ul class="books-show books-list">

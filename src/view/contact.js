@@ -6,6 +6,7 @@ export default class extends Main {
     this.setTitle('Contact Us');
   }
 
+  // html section for contact
   getDoc = async () => `<section class="contact-me">
   <div class="container-contact-me">
       <h3 class="contact-h3">Contact Information</h3>

@@ -6,6 +6,7 @@ export default class extends Main {
     this.setTitle('Add Books');
   }
 
+  // html section for contact
   getDoc = async () => `<section class="area">
     <h3>Add a New Book</h3>
 
