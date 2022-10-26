@@ -1,41 +1,41 @@
 import Books from './modules/Classes.js';
-
+import Add from './view/add.js';
+import Contact from './view/contact.js';
+import Show from './view/show.js';
 // get books data from localStorage if it is null give empty array to class
 const books = new Books((JSON.parse(localStorage.getItem('books')) === null) ? [] : JSON.parse(localStorage.getItem('books')));
-// books.set();
-// get list of books and append to dom
-books.createBookFromLocal();
 
-// add button
-const button = document.getElementById('add');
+const load = async () => {
+  const fragmentId = window.location.hash.substr(1);
+  const routes = [
+    { path: '/', View: Add },
+    { path: 'list', View: Show },
+    { path: 'about', View: Contact },
+    { path: 'add', View: Add },
+  ];
 
-// if click add btn, data to local and reload the page
-button.addEventListener('click', (e) => {
-  books.addBook(e);
+  const route = routes.filter((route) => route.path === fragmentId);
+  const view = new route[0].View();
+  document.querySelector('#app').innerHTML = await view.getDoc();
+  if (route[0].path === 'list') {
+    books.createBookFromLocal();
+  }
+
+  if (route[0].path === 'add') {
+    // add button
+    const button = document.getElementById('add');
+    // if click add btn, data to local and reload the page
+    button.addEventListener('click', (e) => {
+      books.addBook(e);
+    });
+  }
+};
+if (!window.location.hash) {
+  window.location.hash = '#home';
+}
+load();
+window.addEventListener('hashchange', () => {
+  load();
 });
 
-// select the nav items
-let list = document.getElementById('list');
-let addnew = document.getElementById('addnew');
-let contact = document.getElementById('contact');
-let addbook = document.querySelector('.area');
-let showbook = document.querySelector('.show-book-list');
-let contactme = document.querySelector('.contact-me');
-
-list.addEventListener('click', () => {
-  showbook.style.display = 'flex';
-  addbook.style.display = 'none';
-  contactme.style.display = 'none';
-})
-
-addnew.addEventListener('click', () => {
-  addbook.style.display = 'flex';
-  showbook.style.display = 'none';
-  contactme.style.display = 'none';
-})
-
-contact.addEventListener('click', () => {
-  addbook.style.display = 'none';
-  showbook.style.display = 'none';
-  contactme.style.display = 'flex';
-})
+load();

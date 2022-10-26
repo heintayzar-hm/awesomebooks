@@ -13,33 +13,26 @@ export default class Books {
 
   // method to add book by geting data from dom
   addBook(e) {
-    const booksShow = document.querySelector('.books-show');
-    booksShow.style.display = 'block';
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     this.books.push({ title, author });
     const book = this.bookToDom(title, author);
-    booksShow.append(book);
     localStorage.setItem('books', JSON.stringify(this.books));
     const form = document.querySelector('form');
     form.reset();
     this.update();
-    this.showList();
+    window.location.assign('#list');
     e.preventDefault();
   }
 
-  // show list after add book func
   // select the nav items
-  showList() {
-    let list = document.getElementById('list');
-let addnew = document.getElementById('addnew');
-let contact = document.getElementById('contact');
-let addbook = document.querySelector('.area');
-let showbook = document.querySelector('.show-book-list');
-let contactme = document.querySelector('.contact-me');
-  showbook.style.display = 'flex';
-  addbook.style.display = 'none';
-  contactme.style.display = 'none';
+  showList= () => {
+    const addbook = document.querySelector('.area');
+    const showbook = document.querySelector('.show-book-list');
+    const contactme = document.querySelector('.contact-me');
+    showbook.style.display = 'flex';
+    addbook.style.display = 'none';
+    contactme.style.display = 'none';
   }
   // method to create books and append to dom
 
