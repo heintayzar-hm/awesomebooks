@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+
     <title>Awesome Books</title>
     <link rel="stylesheet" href="styles.css">
     <script type="module"src="src/index.js" defer></script>
 </head>
 <body>
-    <section class="area">
-        <h1>Awesome Books</h1>
-    <ul class="books-show">
-    </ul>
-    
-    <h3>Add a New Book</h3>
-
-    <form id="bookForm">
-        <input type="text" placeholder="title" id="title" maxlength="30">
-        <br><br>
-        <input type="text" placeholder="Author" id="author" maxlength="30">
-        <br><br>
-        <button id="add" type="submit">Add</button>
-    </form>
-</section>
+    <nav>
+        <header>Awesome Books</header>
+        <ul class="nav-links">
+            <li class="nav-link pointer" ><a href='#list' id="list">List</a></li>
+            <li class="nav-link pointer" ><a href='#add' id="add">Add new</a></li>
+            <li class="nav-link pointer" ><a href='#about' id="about">Contact</a></li>
+        </ul>
+    </nav>
+<div id="app"></div>
+    <footer>
+        <p class="footer-p">Copyright Website Developed by Muda and Tay Zar 2022</p>
+    </footer>
 </body>
 </html>
