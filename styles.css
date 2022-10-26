@@ -2,6 +2,11 @@ body {
   margin: 0 auto;
 }
 
+*{
+  font-family: "Audiowide", sans-serif;
+
+}
+
 .books-list {
   list-style-type: none;
   padding: 8px;
@@ -85,15 +90,47 @@ nav {
 }
 
 footer {
-  position: fixed;
+  border: 2px solid black;
+  margin: 1%;
+  position: absolute;
   bottom: 0;
-  border: 1px solid black;
-  padding: 10px;
-  width: 97vw;
-  height: 40px;
-  margin: 0 10px 0 10px;
+  width: 97%;
+  height: 2.5rem;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: aqua;
+}
+
+.footer-p {
+  margin: 0;
+    text-align: center;
+}
+
+.current {
+  color: chocolate;
+  text-decoration: underline;
+  opacity: 0.6;
+}
+
+#bookForm {
+  width: 50%;
+}
+
+input {
+    width:100%;
+    padding: 7px;
+}
+
+h1,h2,h3,h4 {
+  font-size: 1.5em;
 }

@@ -10,11 +10,11 @@ export default class extends Main {
     <h3>Add a New Book</h3>
 
     <form id="bookForm">
-        <input type="text" placeholder="title" id="title" maxlength="30">
+        <input type="text" placeholder="Title" id="title" maxlength="30">
         <br><br>
         <input type="text" placeholder="Author" id="author" maxlength="30">
         <br><br>
-        <button id="add" type="submit">Add</button>
+        <button id="add-books" type="submit">Add</button>
     </form>
     </section>`
 }

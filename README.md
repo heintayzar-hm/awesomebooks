@@ -3,7 +3,7 @@
 # Awesome Books
 
 > Description of Awesome Books.
-This is the "Kpop Conferrence" Project with just Html and Css and Javascript. <br>
+This is the "Awesome Books" Project with just Html and Css and Javascript. Single Page Application(no reloading,no framework) <br>
 No frameworks
 
 ## Description

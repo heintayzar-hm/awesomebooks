@@ -12,9 +12,7 @@ export default class Books {
   }
 
   // method to add book by geting data from dom
-  addBook(e) {
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
+  addBook({ e, title, author }) {
     this.books.push({ title, author });
     const book = this.bookToDom(title, author);
     localStorage.setItem('books', JSON.stringify(this.books));
@@ -37,7 +35,12 @@ export default class Books {
   // method to create books and append to dom
 
   createBookFromLocal() {
+    if (this.books.length === 0) {
+      window.location.assign('#add');
+    }
     for (let i = 0; i < this.books.length; i += 1) {
+      // console.log(this.books);
+
       const booksShow = document.querySelector('.books-show');
       booksShow.style.display = 'block';
       const book = this.bookToDom(this.books[i].title, this.books[i].author);
@@ -71,6 +74,7 @@ export default class Books {
     if (this.books.length === 0) {
       const booksShow = document.querySelector('.books-show');
       booksShow.style.display = 'none';
+      window.location.assign('#add');
     }
   }
 }
