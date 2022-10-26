@@ -85,3 +85,13 @@ nav {
   justify-content: center;
   display: none;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  border: 1px solid black;
+  padding: 10px;
+  width: 97%;
+  height: 20px;
+  margin: 0px 10px 0px 10px;
+}

@@ -24,7 +24,22 @@ export default class Books {
     const form = document.querySelector('form');
     form.reset();
     this.update();
+    this.showList();
     e.preventDefault();
+  }
+
+  // show list after add book func
+  // select the nav items
+  showList() {
+    let list = document.getElementById('list');
+let addnew = document.getElementById('addnew');
+let contact = document.getElementById('contact');
+let addbook = document.querySelector('.area');
+let showbook = document.querySelector('.show-book-list');
+let contactme = document.querySelector('.contact-me');
+  showbook.style.display = 'flex';
+  addbook.style.display = 'none';
+  contactme.style.display = 'none';
   }
   // method to create books and append to dom
 
