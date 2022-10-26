@@ -67,7 +67,7 @@ if (!window.location.hash) {
   window.location.hash = '#add';
 }
 
-// load for hte intital page
+// load for the intital page
 load();
 
 // eventlistener on hash change

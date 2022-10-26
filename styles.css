@@ -137,3 +137,15 @@ h3,
 h4 {
   font-size: 1.5em;
 }
+
+@media (max-width: 430px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    position: static;
+    padding: 0;
+  }
+}
