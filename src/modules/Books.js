@@ -3,16 +3,14 @@ export default class Books {
     this.books = books;
   }
 
-  get() {
-    return this.books;
-  }
+  get = () => this.books;
 
-  update() {
+  update = () => {
     this.books = JSON.parse(localStorage.getItem('books'));
   }
 
   // method to add book by geting data from parameters
-  addBook({ e, title, author }) {
+  addBook = ({ e, title, author }) => {
     this.books.push({ title, author });
     // addd to class
     this.bookToDom(title, author);
@@ -29,7 +27,7 @@ export default class Books {
   }
 
   // select the nav items
-  showList= () => {
+  showList = () => {
     const addbook = document.querySelector('.area');
     const showbook = document.querySelector('.show-book-list');
     const contactme = document.querySelector('.contact-me');
@@ -39,7 +37,7 @@ export default class Books {
   }
   // method to create books and append to dom
 
-  createBookFromLocal() {
+  createBookFromLocal = () => {
     // no books no show
     if (this.books.length === 0) {
       window.location.assign('#add');
@@ -54,7 +52,7 @@ export default class Books {
   }
 
   // create list elemnt for books
-  bookToDom(title, author) {
+  bookToDom = (title, author) => {
     const book = document.createElement('li');
     book.setAttribute('title', title);
     const p = document.createElement('p');
@@ -70,7 +68,7 @@ export default class Books {
   }
   // method to remove li by getting title
 
-  remove(title) {
+  remove = (title) => {
     const removedBooks = this.books.filter((item) => item.title !== title);
     localStorage.setItem('books', JSON.stringify(removedBooks));
     const removedBook = document.querySelector(`li[title='${title}']`);
