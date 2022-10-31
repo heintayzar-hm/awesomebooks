@@ -1,6 +1,7 @@
 // To fix or import by cdn
-// const { DateTime } = luxon;
-import { DateTime } from '../../node_modules/luxon/src/luxon.js';
+// eslint-disable-next-line no-undef
+const { DateTime } = luxon;
+// import { DateTime } from '../../node_modules/luxon/src/luxon.js';
 
 const formatTs = () => {
   const datetime = DateTime.now();
