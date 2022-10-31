@@ -18,4 +18,15 @@ export default class extends Main {
         <button id="add-books" type="submit">Add</button>
     </form>
     </section>`
+
+  getJs = async (books) => {
+    // add button
+    const button = document.getElementById('add-books');
+    // if click add btn, data to local
+    button.addEventListener('click', (e) => {
+      const title = document.getElementById('title').value;
+      const author = document.getElementById('author').value;
+      books.addBook({ e, title, author });
+    });
+  }
 }

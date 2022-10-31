@@ -138,6 +138,11 @@ h4 {
   font-size: 1.5em;
 }
 
+.date-time {
+  position: absolute;
+  right: 1%;
+}
+
 @media (max-width: 430px) {
   nav {
     flex-direction: column;

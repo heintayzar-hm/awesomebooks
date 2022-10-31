@@ -12,4 +12,8 @@ export default class extends Main {
   <ul class="books-show books-list">
   </ul>
 </section>`
+
+  getJs = async (books) => {
+    books.createBookFromLocal();
+  }
 }
